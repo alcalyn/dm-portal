@@ -8,6 +8,11 @@ use Symfony\Component\Debug\Debug;
 // for more information
 //umask(0000);
 
+if ('true' !== getenv('PORTAL_ENABLE_DEV')) {
+    header('HTTP/1.0 403 Forbidden');
+    exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
+}
+
 /** @var \Composer\Autoload\ClassLoader $loader */
 $loader = require __DIR__.'/../app/autoload.php';
 Debug::enable();

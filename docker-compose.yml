@@ -18,6 +18,8 @@ services:
             - .:/var/www/html/:rw
         links:
             - database
+        environment:
+            - PORTAL_ENABLE_DEV=true
 
     database:
         container_name: portal-database
