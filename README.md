@@ -14,13 +14,7 @@ git clone git@github.com:Darkmira/dm-portal.git
 cd dm-portal/
 
 # Mount application
-docker-compose up -d
-
-# Install composer dependencies
-docker exec -ti portal-php /bin/bash -c "composer install"
-
-# Create database
-docker exec -ti portal-php /bin/bash -c "php bin/console doctrine:database:create"
+bin/docker.sh install
 ```
 
 Then go to:
