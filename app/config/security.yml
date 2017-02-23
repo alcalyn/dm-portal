@@ -1,16 +1,18 @@
-# To get started with security, check out the documentation:
-# http://symfony.com/doc/current/security.html
 security:
+    encoders:
+        AppBundle\Entity\User:
+            algorithm:            plaintext
+            ignore_case:          false
 
-    # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         db_provider:
-            entity:
-                class: AppBundle:User
-                property: apiKey
+            id: app.user_provider
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -24,4 +26,3 @@ security:
         oauth_token:
             pattern:    ^/oauth/v2/token
             security:   false
-

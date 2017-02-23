@@ -75,3 +75,5 @@ fos_oauth_server:
     access_token_class:  AppBundle\Entity\OAuth\AccessToken
     refresh_token_class: AppBundle\Entity\OAuth\RefreshToken
     auth_code_class:     AppBundle\Entity\OAuth\AuthCode
+    service:
+        user_provider: app.user_provider

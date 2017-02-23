@@ -1,0 +1,11 @@
+services:
+    app.repository.user:
+        class: Doctrine\ORM\EntityRepository
+        factory: ["@doctrine.orm.entity_manager", getRepository]
+        arguments:
+            - AppBundle:User
+
+    app.user_provider:
+        class: AppBundle\Security\UserProvider
+        arguments:
+            - "@app.repository.user"
