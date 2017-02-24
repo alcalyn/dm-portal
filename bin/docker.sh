@@ -27,6 +27,7 @@ function reset_project
     ${docker_exec} ${php_container} /bin/bash -c "composer install --prefer-dist"
     ${docker_exec} ${php_container} /bin/bash -c "bin/console doctrine:database:drop --force"
     ${docker_exec} ${php_container} /bin/bash -c "bin/console doctrine:database:create"
+    ${docker_exec} ${php_container} /bin/bash -c "bin/console doctrine:schema:create"
 }
 
 function start
