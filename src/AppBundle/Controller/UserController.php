@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations\View;
@@ -50,6 +51,10 @@ class UserController extends FOSRestController
     public function getLoggedInUserAction()
     {
         $user = $this->getUser();
+
+        if (null === $user) {
+            throw new UnauthorizedHttpException('No authenticated user');
+        }
 
         return $user;
     }

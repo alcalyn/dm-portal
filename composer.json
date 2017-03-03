@@ -32,6 +32,7 @@
         "nelmio/api-doc-bundle": "^2.13.1",
         "friendsofsymfony/oauth-server-bundle": "^1.5",
         "friendsofsymfony/rest-bundle": "^2.1.1",
+        "khepin/yaml-fixtures-bundle": "^1.0.1",
         "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {

@@ -30,6 +30,11 @@ function reset_project
     ${docker_exec} ${php_container} /bin/bash -c "bin/console doctrine:schema:create"
 }
 
+function install_fixtures
+{
+    ${docker_exec} ${php_container} /bin/bash -c "bin/console khepin:yamlfixtures:load"
+}
+
 function start
 {
     ${docker_compose} up -d
@@ -49,6 +54,7 @@ if [ $1 == "install" ]; then
     start
     reset_project
     change_mod
+    install_fixtures
 elif [ $1 == "start" ]; then
     start
     change_mod
