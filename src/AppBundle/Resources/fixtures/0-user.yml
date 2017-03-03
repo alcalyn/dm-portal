@@ -1,0 +1,6 @@
+model: AppBundle\Entity\User
+fixtures:
+    admin:
+        username: admin
+        password: $2y$13$db/gWqYhKgq2jAdZAr24ie1eccFWOs2LCMzrMdESaw2TyZFDlKopO
+        isActive: 1

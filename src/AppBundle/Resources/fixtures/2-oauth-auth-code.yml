@@ -1,0 +1,9 @@
+model: AppBundle\Entity\OAuth\AuthCode
+fixtures:
+    admin_web_client:
+        user: admin
+        client: web_client
+        token: YjNlY2EwNDQwZDY0ZjgwN2Y3MjExOTgxNzY5NWQxYjg3NTkyZDZkNGUwYWI2N2RhNjkzYWJjNGI4OGVmYmMzNQ
+        redirectUri: https://www.darkmira.fr/
+        expiresAt: 1700000000
+        scope: password

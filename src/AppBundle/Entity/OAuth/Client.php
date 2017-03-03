@@ -26,6 +26,24 @@ class Client extends BaseClient
      */
     protected $name;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
     public function setName($name)
     {
         $this->name = $name;
