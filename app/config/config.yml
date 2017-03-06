@@ -88,5 +88,14 @@ fos_rest:
     view:
         view_response_listener: true
 
+nelmio_cors:
+    paths:
+       "^/(api|oauth)/":
+          allow_credentials: true
+          allow_origin: ['*']
+          allow_headers: ['*']
+          allow_methods: ['*']
+          max_age: 3600
+
 nelmio_api_doc:
     name: Darkmira portal API
