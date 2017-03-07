@@ -79,6 +79,8 @@ fos_oauth_server:
         user_provider: app.user_provider
 
 fos_rest:
+    routing_loader:
+        include_format: false
     format_listener:
         rules:
             -

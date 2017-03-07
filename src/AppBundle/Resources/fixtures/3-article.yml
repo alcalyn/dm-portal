@@ -1,0 +1,14 @@
+model: AppBundle\Entity\Article
+fixtures:
+    article_1:
+        title: 'Article No 1'
+        description: 'This is the first idea i have to make an article of this blog'
+        proposedBy: admin
+    article_2:
+        title: 'Article No 2'
+        description: 'This is the second idea i have to make an article of this blog'
+        proposedBy: admin
+    article_3:
+        title: 'Article No 3'
+        description: 'This is the third idea i have to make an article of this blog'
+        proposedBy: admin

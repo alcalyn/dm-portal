@@ -19,6 +19,8 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     *
+     * @JMS\Groups({"user", "article"})
      */
     private $id;
 
@@ -26,6 +28,8 @@ class User implements UserInterface
      * @var string
      *
      * @ORM\Column(type="string", unique=true)
+     *
+     * @JMS\Groups({"user", "article"})
      */
     private $username;
 
@@ -42,6 +46,8 @@ class User implements UserInterface
      * @var bool
      *
      * @ORM\Column(type="boolean")
+     *
+     * @JMS\Groups({"user", "article"})
      */
     private $isActive;
 

@@ -27,6 +27,7 @@ class UserController extends FOSRestController
      * ```
      *
      * @ApiDoc(
+     *      section="Users",
      *      headers={
      *         {
      *             "name"="Authorization",
@@ -41,14 +42,9 @@ class UserController extends FOSRestController
      *      }
      * )
      *
-     * @Route(
-     *      "/api/me",
-     *      methods={"GET"}
-     * )
-     *
      * @View
      */
-    public function getLoggedInUserAction()
+    public function getUsersMeAction()
     {
         $user = $this->getUser();
 
