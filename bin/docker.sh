@@ -11,6 +11,7 @@ Available commands:
   composer              Composer
   console               Symfony console
   php                   Launch command in php container
+  bash                  Open a bash console in php container
 "
 docker="docker"
 docker_exec="docker exec -ti"
@@ -50,6 +51,11 @@ function change_mod
     ${docker_exec} ${php_container} /bin/bash -c "chmod -R 777 var/*"
 }
 
+function bash
+{
+    ${docker_exec} ${php_container} /bin/bash
+}
+
 if [ $1 == "install" ]; then
     start
     reset_project
@@ -66,6 +72,8 @@ elif [ $1 == "php" ]; then
     ${docker_exec} ${php_container} /bin/bash -c "php ${@:2}"
 elif [ $1 == "console" ]; then
     ${docker_exec} ${php_container} /bin/bash -c "php bin/console ${@:2}"
+elif [ $1 == "bash" ]; then
+    ${docker_exec} ${php_container} /bin/bash
 elif [ $1 == "composer" ]; then
     ${docker_exec} ${php_container} /bin/bash -c "composer ${@:2}"
 else
